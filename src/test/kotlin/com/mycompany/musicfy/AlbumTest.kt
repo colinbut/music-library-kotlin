@@ -5,6 +5,9 @@
  */
 package com.mycompany.musicfy
 
+import com.mycompany.musicfy.model.Album
+import com.mycompany.musicfy.model.Artist
+import com.mycompany.musicfy.model.Track
 import org.assertj.core.api.Assertions.assertThat
 import java.time.Year
 import kotlin.test.Test

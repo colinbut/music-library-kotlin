@@ -5,8 +5,8 @@
  */
 package com.mycompany.musicfy.repository
 
-import com.mycompany.musicfy.Album
-import com.mycompany.musicfy.Track
+import com.mycompany.musicfy.model.Album
+import com.mycompany.musicfy.model.Track
 
 class AlbumRepositoryImpl(private val trackRepository: TrackRepository) : AlbumRepository {
 

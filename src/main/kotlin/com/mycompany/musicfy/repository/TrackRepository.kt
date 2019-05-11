@@ -5,7 +5,7 @@
  */
 package com.mycompany.musicfy.repository
 
-import com.mycompany.musicfy.Track
+import com.mycompany.musicfy.model.Track
 
 interface TrackRepository {
     fun findTrackByTrackName(trackName: String) : Track?

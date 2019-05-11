@@ -5,7 +5,7 @@
  */
 package com.mycompany.musicfy.repository
 
-import com.mycompany.musicfy.Track
+import com.mycompany.musicfy.model.Track
 import java.time.Year
 
 class TrackRepositoryImpl(private val artistRepository: ArtistRepository) : TrackRepository {

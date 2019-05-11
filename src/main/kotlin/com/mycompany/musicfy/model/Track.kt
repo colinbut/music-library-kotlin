@@ -3,8 +3,8 @@
  * | Copyright © 2019 Colin But. All rights reserved.
  * |-------------------------------------------------
  */
-package com.mycompany.musicfy
+package com.mycompany.musicfy.model
 
-class Playlist {
-    val tracks : List<Track> = ArrayList()
-}
+import java.time.Year
+
+data class Track (val trackId: Int, val trackName: String, val singers: List<Artist>, val trackYear: Year)

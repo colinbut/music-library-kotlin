@@ -5,7 +5,7 @@
  */
 package com.mycompany.musicfy.repository
 
-import com.mycompany.musicfy.Artist
+import com.mycompany.musicfy.model.Artist
 
 interface ArtistRepository {
     fun findArtistByArtistName(artistName: String) : Artist?

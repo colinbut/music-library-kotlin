@@ -5,7 +5,7 @@
  */
 package com.mycompany.musicfy.repository
 
-import com.mycompany.musicfy.Album
+import com.mycompany.musicfy.model.Album
 
 interface AlbumRepository {
     fun getAllAlbums() : List<Album>
