@@ -14,7 +14,9 @@ class AlbumTest {
     @Test
     fun `Retrieve list of albums should return list of albums in the system` () {
         val expectedAlbumList = listOf(
-            Album("21", 2011, getAlbum21Tracks())
+                Album("21", 2011, getAlbum21Tracks()),
+                Album("??", 2013, getAlbum21Tracks()),
+                Album("21", 2019, getAlbum21Tracks())
         )
 
         val albumList = getAlbums()
@@ -30,7 +32,7 @@ class AlbumTest {
         ).toMutableList()
     }
 
-    private fun getAlbums(): Any {
+    private fun getAlbums(): MutableList<Album> {
         val adele21Album = Album("21", 2011, getAlbum21Tracks())
 
         val albumList : MutableList<Album> = ArrayList()
