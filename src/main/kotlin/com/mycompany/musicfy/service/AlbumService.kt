@@ -5,6 +5,8 @@
  */
 package com.mycompany.musicfy.service
 
+import com.mycompany.musicfy.Album
+
 interface AlbumService {
-    fun getAlbumList()
+    fun getAlbumList() : List<Album>
 }

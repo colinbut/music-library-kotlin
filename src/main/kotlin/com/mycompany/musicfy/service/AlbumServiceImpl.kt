@@ -5,9 +5,12 @@
  */
 package com.mycompany.musicfy.service
 
-class AlbumServiceImpl : AlbumService {
+import com.mycompany.musicfy.Album
+import com.mycompany.musicfy.repository.AlbumRepository
 
-    override fun getAlbumList() {
+class AlbumServiceImpl (private val albumRepository: AlbumRepository) : AlbumService {
 
+    override fun getAlbumList() : List<Album> {
+        return albumRepository.getAllAlbums()
     }
 }

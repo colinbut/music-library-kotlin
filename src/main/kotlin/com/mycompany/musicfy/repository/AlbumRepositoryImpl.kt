@@ -9,6 +9,7 @@ import com.mycompany.musicfy.Album
 import com.mycompany.musicfy.Track
 
 class AlbumRepositoryImpl(private val trackRepository: TrackRepository) : AlbumRepository {
+
     private val albums : MutableList<Album> = ArrayList()
 
     init {
@@ -19,6 +20,10 @@ class AlbumRepositoryImpl(private val trackRepository: TrackRepository) : AlbumR
         }
 
         albums.add(Album("Album Name", 2009, trackList))
+    }
+
+    override fun getAllAlbums(): List<Album> {
+        return albums.toList()
     }
 
 }
