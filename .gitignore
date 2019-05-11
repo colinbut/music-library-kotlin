@@ -13,7 +13,10 @@
 
 .settings/*
 .idea/*
-target/* 
+target/*
+.gradle/
+build/*
+out/*
 
 # Packages #
 ############
