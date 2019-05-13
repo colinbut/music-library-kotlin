@@ -8,7 +8,7 @@ package com.mycompany.musicfy.repository
 import com.mycompany.musicfy.model.Track
 import java.time.Year
 
-class TrackRepositoryImpl(private val artistRepository: ArtistRepository) : TrackRepository {
+class TrackRepositoryImpl(artistRepository: ArtistRepository) : TrackRepository {
 
     private val tracks : MutableList<Track> = ArrayList()
 
@@ -21,4 +21,17 @@ class TrackRepositoryImpl(private val artistRepository: ArtistRepository) : Trac
     override fun findTrackByTrackName(trackName: String): Track? {
         return tracks.find { it.trackName == trackName }
     }
+
+    override fun findTrackByTrackNameAndTrackYear(trackName: String, trackYear: Year) : Track? {
+        return tracks.find { it.trackName == trackName && it.trackYear == trackYear }
+    }
+
+    override fun insertTrack(track: Track) {
+        tracks.add(track)
+    }
+
+    override fun removeTrack(track: Track) {
+        tracks.remove(track)
+    }
+
 }
