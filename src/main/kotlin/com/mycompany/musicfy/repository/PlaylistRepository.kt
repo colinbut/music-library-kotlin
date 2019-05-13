@@ -9,4 +9,5 @@ import com.mycompany.musicfy.model.Playlist
 
 interface PlaylistRepository {
     fun addNewPlaylist(playlist: Playlist)
+    fun getPlaylistByName(name: String) : Playlist?
 }
