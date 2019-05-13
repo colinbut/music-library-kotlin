@@ -23,4 +23,12 @@ class ArtistRepositoryImpl : ArtistRepository {
         return artists.find { it.artistName == artistName }
     }
 
+    override fun addNewArtist(artist: Artist) {
+        artists.add(artist)
+    }
+
+    override fun removeArtist(artist: Artist) {
+        artists.remove(artist)
+    }
+
 }

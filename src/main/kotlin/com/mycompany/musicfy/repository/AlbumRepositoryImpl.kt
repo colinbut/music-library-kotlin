@@ -22,6 +22,22 @@ class AlbumRepositoryImpl(private val trackRepository: TrackRepository) : AlbumR
         albums.add(Album("Album Name", 2009, trackList))
     }
 
+    override fun getAlbumByName(name: String): Album {
+        return albums.stream().filter { it.albumName == name }.findAny().get()
+    }
+
+    override fun getAlbumByNameAndAlbumYear(name: String, albumYear: Int): Album {
+        return albums.stream()
+                .filter { it.albumName == name }
+                .filter { it.albumYear == albumYear }
+                .findAny().get()
+    }
+
+    override fun createNewAlbum(album: Album) {
+        albums.add(album)
+    }
+
+
     override fun getAllAlbums(): List<Album> {
         return albums.toList()
     }
