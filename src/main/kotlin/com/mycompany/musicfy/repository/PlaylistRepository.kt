@@ -3,8 +3,10 @@
  * | Copyright © 2019 Colin But. All rights reserved.
  * |-------------------------------------------------
  */
-package com.mycompany.musicfy.model
+package com.mycompany.musicfy.repository
 
-class Playlist(val id: Int, val name: String) {
-    val tracks : List<Track> = ArrayList()
+import com.mycompany.musicfy.model.Playlist
+
+interface PlaylistRepository {
+    fun addNewPlaylist(playlist: Playlist)
 }
