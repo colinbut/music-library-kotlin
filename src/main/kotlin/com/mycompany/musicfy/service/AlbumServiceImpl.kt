@@ -10,6 +10,22 @@ import com.mycompany.musicfy.repository.AlbumRepository
 
 class AlbumServiceImpl (private val albumRepository: AlbumRepository) : AlbumService {
 
+    override fun createAlbum(album: Album) {
+        albumRepository.createNewAlbum(album)
+    }
+
+    override fun getAlbumByName(name: String) {
+        albumRepository.getAlbumByName(name)
+    }
+
+    override fun getAlbumByYear(year: Int) {
+        // TODO
+    }
+
+    override fun getAlbumByNameAndYear(name: String, year: Int) {
+        albumRepository.getAlbumByNameAndAlbumYear(name, year)
+    }
+
     override fun getAlbumList() : List<Album> {
         return albumRepository.getAllAlbums()
     }
