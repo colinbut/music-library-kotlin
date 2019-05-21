@@ -7,10 +7,12 @@ package com.mycompany.musicfy.repository
 
 import com.mycompany.musicfy.model.Album
 import com.mycompany.musicfy.model.Track
+import java.util.*
+import kotlin.collections.HashMap
 
-class AlbumRepositoryImpl(private val trackRepository: TrackRepository) : AlbumRepository {
+class AlbumRepositoryImpl(trackRepository: TrackRepository) : AlbumRepository {
 
-    private val albums : MutableList<Album> = ArrayList()
+    private val albums : MutableMap<UUID, Album> = HashMap()
 
     init {
         val trackList : MutableList<Track> = ArrayList()
@@ -19,27 +21,30 @@ class AlbumRepositoryImpl(private val trackRepository: TrackRepository) : AlbumR
             trackList.add(track)
         }
 
-        albums.add(Album("Album Name", 2009, trackList))
+        albums[UUID.randomUUID()] = Album("Album Name", 2009, trackList)
     }
 
     override fun getAlbumByName(name: String): Album {
-        return albums.stream().filter { it.albumName == name }.findAny().get()
+        return albums.values.stream().filter { it.albumName == name }.findAny().get()
     }
 
     override fun getAlbumByNameAndAlbumYear(name: String, albumYear: Int): Album {
-        return albums.stream()
+        return albums.values.stream()
                 .filter { it.albumName == name }
                 .filter { it.albumYear == albumYear }
                 .findAny().get()
     }
 
     override fun createNewAlbum(album: Album) {
-        albums.add(album)
+        albums[UUID.randomUUID()] = album
     }
 
 
     override fun getAllAlbums(): List<Album> {
-        return albums.toList()
+        return albums.values.toList()
     }
 
+    override fun deleteAlbum(albumId: UUID) {
+        albums.remove(albumId)
+    }
 }

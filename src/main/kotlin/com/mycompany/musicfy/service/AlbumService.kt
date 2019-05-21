@@ -6,6 +6,7 @@
 package com.mycompany.musicfy.service
 
 import com.mycompany.musicfy.model.Album
+import java.util.*
 
 interface AlbumService {
     fun getAlbumList() : List<Album>
@@ -13,4 +14,5 @@ interface AlbumService {
     fun getAlbumByName(name: String)
     fun getAlbumByYear(year: Int)
     fun getAlbumByNameAndYear(name: String, year: Int)
+    fun deleteAlbum(albumId: UUID)
 }
