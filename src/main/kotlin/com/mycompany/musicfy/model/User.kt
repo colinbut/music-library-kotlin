@@ -6,6 +6,10 @@
 package com.mycompany.musicfy.model
 
 class User {
-    val songs: List<Track> = ArrayList()
+    val songs: MutableList<Track> = ArrayList()
     val playlists : List<Playlist> = ArrayList()
+
+    fun addSong(track: Track) {
+        songs.add(track)
+    }
 }
